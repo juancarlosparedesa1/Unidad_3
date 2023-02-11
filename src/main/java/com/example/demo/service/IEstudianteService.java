@@ -1,6 +1,9 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import com.example.demo.modelo.Estudiante;
+import com.example.demo.modelo.dto.EstudianteDTO;
 
 public interface IEstudianteService {
 	public void  insetar(Estudiante estudiante);
@@ -10,6 +13,14 @@ public interface IEstudianteService {
 	public Estudiante bucarPorNombreQueryTyped(String nombre);
 	public Estudiante bucarPorNombreNamedQuery(String nombre);
 	public Estudiante bucarPorNombreNamedQueryTyped(String nombre);
+	// DTO
+		public EstudianteDTO buscarPorNombreTypeQueryDTO(String nombre);
+		public Estudiante buscarPorNombreQueryTypedCriteria(String nombre);
+		public List<Estudiante> buscarPorNombreQueryTypedCriteriaAndOr(String nombre,String apellido,String bandera);
+
+		//hacer este camibp
+	
+		//public Estudiante buscarPorNombreQueryCriteria(String nombre);
 
 
 }

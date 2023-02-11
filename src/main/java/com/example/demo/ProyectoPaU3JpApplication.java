@@ -26,11 +26,14 @@ public class ProyectoPaU3JpApplication implements CommandLineRunner {
 		estudiante.setApellido("paredes");
 		//this.estudianteService.insera
 		this.estudianteService.insetar(estudiante);
-		this.estudianteService.bucarPorNombreQuery("juan");
-		this.estudianteService.bucarPorNombreQueryTyped("juan");
-		this.estudianteService.bucarPorNombreNamedQuery("juan");
-		this.estudianteService.bucarPorNombreNamedQueryTyped("juan");
+//		this.estudianteService.bucarPorNombreQuery("juan");
+//		this.estudianteService.bucarPorNombreQueryTyped("juan");
+//		this.estudianteService.bucarPorNombreNamedQuery("juan");
+//		this.estudianteService.bucarPorNombreNamedQueryTyped("juan");
+		this.estudianteService.buscarPorNombreTypeQueryDTO("juan");
 		//this.estudianteService.bucarPorNombreNamedQueryTyped("juan");
+		this.estudianteService.buscarPorNombreQueryTypedCriteria("juan");
+		this.estudianteService.buscarPorNombreQueryTypedCriteriaAndOr("pepito", "perez", "M");
 	}
 
 }
