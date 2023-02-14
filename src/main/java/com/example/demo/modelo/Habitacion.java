@@ -1,5 +1,6 @@
 package com.example.demo.modelo;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,16 +23,16 @@ public class Habitacion {
 
 	@Column(name = "habi_numero")
 	private String numero;
-	
-	@Column(name = "habi_tipo")
-	private String tipo;
 
-	@ManyToOne
+	@Column(name = "habi_tipo")
+	private String tipoHabitacion;
+
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "habi_id_hotel")
 	private Hotel hotel;
 
-
 	// Set y get
+
 	public Integer getId() {
 		return id;
 	}
@@ -48,14 +49,6 @@ public class Habitacion {
 		this.numero = numero;
 	}
 
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
 	public Hotel getHotel() {
 		return hotel;
 	}
@@ -64,14 +57,23 @@ public class Habitacion {
 		this.hotel = hotel;
 	}
 
+	public String getTipoHabitacion() {
+		return tipoHabitacion;
+	}
+
+	public void setTipoHabitacion(String tipoHabitacion) {
+		this.tipoHabitacion = tipoHabitacion;
+	}
+	
+	//para imprimier
+
 	@Override
 	public String toString() {
-		return "Habitacion [id=" + id + ", numero=" + numero + ", tipo=" + tipo + ", hotel=" + hotel + "]";
+		return "Habitacion [id=" + id + ", numero=" + numero + ", hotel=" + hotel + "]";
 	}
 	
 	
-
-
+	
 	
 
 }

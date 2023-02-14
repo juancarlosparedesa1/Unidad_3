@@ -2,9 +2,9 @@ package com.example.demo.modelo;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -28,7 +28,7 @@ public class Hotel {
 	@Column(name = "hote_direccion")
 	private String direccion;
 
-	@OneToMany(mappedBy = "hotel", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)
 	private List<Habitacion> habitaciones;
 
 	// Set y get
@@ -63,12 +63,6 @@ public class Hotel {
 
 	public void setHabitaciones(List<Habitacion> habitaciones) {
 		this.habitaciones = habitaciones;
-	}
-
-	@Override
-	public String toString() {
-		return "Hotel [id=" + id + ", nombre=" + nombre + ", direccion=" + direccion + ", habitaciones=" + habitaciones
-				+ "]";
 	}
 
 }
